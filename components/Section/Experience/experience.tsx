@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../../Module/section-heading";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -36,7 +36,7 @@ export default function Experience() {
                     ? "0.4rem solid #9ca3af"
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
-              date={item.date}
+              date={item.date}  
               icon={item.icon}
               iconStyle={{
                 background:
