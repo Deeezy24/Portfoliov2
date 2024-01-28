@@ -8,6 +8,7 @@ import PortfolioV2Img from "@/public/Porfoliov2.png";
 import PortfolioV1Img from "@/public/Portfoliov1.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
 import NetgoImg from "@/public/Netgo.png";
+import CodebilityImg from "@/public/Codebility.png"
 
 export const links = [
   {
@@ -65,6 +66,22 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Javascript Calculator",
+    description:
+      "A project to calculate and function like an actual calculator using JavaScript",
+    tags: ["HTML", "CSS", "JavaScript"],
+    imageUrl: JavaCalcuImg,
+    projectUrl:"https://calculatorjsvanilla.netlify.app"
+  },
+  {
+    title: "Netgo Netflix Clone",
+    description:
+      "A project that clones Netlflix. It is a school project that has full-stack support and consist of Valid ID registration in compliance to the criteria. It has crud, admin and user dashboard",
+    tags: ["HTML", "CSS", "SQL", "Tailwind", "Php", "JavaScript"],
+    imageUrl: NetgoImg,
+    projectUrl:"https://github.com/IvorG24/Movie-api"
+  },
+  {
     title: "Apexpoint",
     description:
       "I worked as a front-end developer on this internship program for 3 months. A brand that exist in the E-commerce website (Shoppe) and (Lazada).",
@@ -81,20 +98,12 @@ export const projectsData = [
     projectUrl:"https://formapp-fe.vercel.app/?fbclid=IwAR3hRGK-PgwlURkPSvXgaWmZ0LxWh49WYz0Oyo6Bzn3p_T-1udmpaWP8fZM"
   },
   {
-    title: "Javascript Calculator",
+    title: "Codebility Page",
     description:
-      "A project to calculate and function like an actual calculator using JavaScript",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: JavaCalcuImg,
-    projectUrl:"https://calculatorjsvanilla.netlify.app"
-  },
-  {
-    title: "Netgo Netflix Clone",
-    description:
-      "A project that clones Netlflix. It is a school project that has full-stack support and consist of Valid ID registration in compliance to the criteria. It has crud, admin and user dashboard",
-    tags: ["HTML", "CSS", "SQL", "Tailwind", "Php", "JavaScript"],
-    imageUrl: NetgoImg,
-    projectUrl:"https://github.com/IvorG24/Movie-api"
+      "A project that is dedicated to supporting codebility which is our community together with my codevs.",
+    tags: ["Next.js", "SQL", "ExpressJS", "TailwindCSS", "NodeJs"],
+    imageUrl: CodebilityImg,
+    projectUrl:"https://codebility-fe.vercel.app/"
   },
   {
     title: "PortfolioV1",
@@ -129,4 +138,5 @@ export const skillsData = [
   "Express",
   "Php",
   "Framer Motion",
+  "SQL"
 ] as const;
