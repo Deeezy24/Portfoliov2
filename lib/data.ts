@@ -8,7 +8,7 @@ import PortfolioV2Img from "@/public/Porfoliov2.png";
 import PortfolioV1Img from "@/public/Portfoliov1.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
 import NetgoImg from "@/public/Netgo.png";
-import CodebilityImg from "@/public/Codebility.png"
+import CodebilityImg from "@/public/codebility.png"
 
 export const links = [
   {
