@@ -85,7 +85,7 @@ export const projectsData = [
     title: "Apexpoint",
     description:
       "I worked as a front-end developer on this internship program for 3 months. A brand that exist in the E-commerce website (Shoppe) and (Lazada).",
-    tags: ["React", "Next.js", "Tailwind", "Prisma"],
+    tags: ["React", "Next.js", "Tailwind"],
     imageUrl: ApexpointImg,
     projectUrl:"https://apexpointv2.vercel.app/?fbclid=IwAR1YMfLzhpUTJEygLz9CuZlkFhtD0mkqQXPM8H4wHmsCwXdsTbavF-FCs5U"
   },
