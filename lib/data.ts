@@ -93,7 +93,7 @@ export const projectsData = [
     title: "FormApp",
     description:
       "A project related to Football. I was the front-end developer. It has features like queuing, booking and crud.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Zustand"],
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Zustand","MongoDB"],
     imageUrl: FormappImg,
     projectUrl:"https://formapp-fe.vercel.app/?fbclid=IwAR3hRGK-PgwlURkPSvXgaWmZ0LxWh49WYz0Oyo6Bzn3p_T-1udmpaWP8fZM"
   },
@@ -101,7 +101,7 @@ export const projectsData = [
     title: "Codebility Page",
     description:
       "A project that is dedicated to supporting codebility which is our community together with my codevs.",
-    tags: ["Next.js", "SQL", "ExpressJS", "TailwindCSS", "NodeJs"],
+    tags: ["Next.js", "MongoDB", "ExpressJS", "TailwindCSS", "NodeJs"],
     imageUrl: CodebilityImg,
     projectUrl:"https://codebility-fe.vercel.app/"
   },
