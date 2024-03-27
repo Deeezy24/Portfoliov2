@@ -8,7 +8,7 @@ import PortfolioV2Img from "@/public/Porfoliov2.png";
 import PortfolioV1Img from "@/public/Portfoliov1.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
 import NetgoImg from "@/public/Netgo.png";
-import CodebilityImg from "@/public/codebility.png"
+import CodebilityImg from "@/public/codebility.png";
 
 export const links = [
   {
@@ -71,7 +71,7 @@ export const projectsData = [
       "A project to calculate and function like an actual calculator using JavaScript",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: JavaCalcuImg,
-    projectUrl:"https://calculatorjsvanilla.netlify.app"
+    projectUrl: "https://calculatorjsvanilla.netlify.app",
   },
   {
     title: "Netgo Netflix Clone",
@@ -79,7 +79,7 @@ export const projectsData = [
       "A project that clones Netlflix. It is a school project that has full-stack support and consist of Valid ID registration in compliance to the criteria. It has crud, admin and user dashboard",
     tags: ["HTML", "CSS", "SQL", "Tailwind", "Php", "JavaScript"],
     imageUrl: NetgoImg,
-    projectUrl:"https://github.com/IvorG24/Movie-api"
+    projectUrl: "https://github.com/IvorG24/Movie-api",
   },
   {
     title: "Apexpoint",
@@ -87,15 +87,17 @@ export const projectsData = [
       "I worked as a front-end developer on this internship program for 3 months. A brand that exist in the E-commerce website (Shoppe) and (Lazada).",
     tags: ["React", "Next.js", "Tailwind"],
     imageUrl: ApexpointImg,
-    projectUrl:"https://apexpointv2.vercel.app/?fbclid=IwAR1YMfLzhpUTJEygLz9CuZlkFhtD0mkqQXPM8H4wHmsCwXdsTbavF-FCs5U"
+    projectUrl:
+      "https://apexpointv2.vercel.app/?fbclid=IwAR1YMfLzhpUTJEygLz9CuZlkFhtD0mkqQXPM8H4wHmsCwXdsTbavF-FCs5U",
   },
   {
     title: "FormApp",
     description:
       "A project related to Football. I was the front-end developer. It has features like queuing, booking and crud.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Zustand","MongoDB"],
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Zustand", "MongoDB"],
     imageUrl: FormappImg,
-    projectUrl:"https://formapp-fe.vercel.app/?fbclid=IwAR3hRGK-PgwlURkPSvXgaWmZ0LxWh49WYz0Oyo6Bzn3p_T-1udmpaWP8fZM"
+    projectUrl:
+      "https://formapp-fe.vercel.app/?fbclid=IwAR3hRGK-PgwlURkPSvXgaWmZ0LxWh49WYz0Oyo6Bzn3p_T-1udmpaWP8fZM",
   },
   {
     title: "Codebility Page",
@@ -103,15 +105,22 @@ export const projectsData = [
       "A project that is dedicated to supporting codebility which is our community together with my codevs.",
     tags: ["Next.js", "MongoDB", "ExpressJS", "TailwindCSS", "NodeJs"],
     imageUrl: CodebilityImg,
-    projectUrl:"https://codebility-fe.vercel.app/"
+    projectUrl: "https://codebility-fe.vercel.app/",
+  },
+  {
+    title: "Pos Malaysia",
+    description:
+      "A project that is dedicated to track and calculate earnings and records using dashboard for Pos malaysia.",
+    tags: ["Next.js", "MongoDB", "TailwindCSS", "NodeJs", "Ant Design"],
+    imageUrl: CodebilityImg,
+    projectUrl: "https://codebility-fe.vercel.app/",
   },
   {
     title: "PortfolioV1",
-    description:
-      "First Portfolio that is consist of old projects",
-    tags: ["React","Javascript", "Tailwind"],
+    description: "First Portfolio that is consist of old projects",
+    tags: ["React", "Javascript", "Tailwind"],
     imageUrl: PortfolioV1Img,
-    projectUrl:"https://portfolio-ivor.netlify.app/"
+    projectUrl: "https://portfolio-ivor.netlify.app/",
   },
   {
     title: "PortfolioV2",
@@ -119,10 +128,9 @@ export const projectsData = [
       "A project to store my projects and a way to contact me about any concerns",
     tags: ["React", "Next.js", "Tailwind", "Framer"],
     imageUrl: PortfolioV2Img,
-    projectUrl:"/"
+    projectUrl: "/",
   },
-  
-] as const; 
+] as const;
 
 export const skillsData = [
   "HTML",
@@ -138,5 +146,5 @@ export const skillsData = [
   "Express",
   "Php",
   "Framer Motion",
-  "SQL"
+  "SQL",
 ] as const;
