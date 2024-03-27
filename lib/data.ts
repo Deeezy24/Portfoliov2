@@ -8,6 +8,7 @@ import PortfolioV2Img from "@/public/Porfoliov2.png";
 import PortfolioV1Img from "@/public/Portfoliov1.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
 import NetgoImg from "@/public/Netgo.png";
+import PosMalaysia from "@/public/pos_malaysia.png";
 import CodebilityImg from "@/public/codebility.png";
 
 export const links = [
@@ -54,11 +55,12 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "2023-Present",
   },
+
   {
-    title: "Freelance Front-End Developer",
+    title: "Studio20 Front-End Developer",
     location: "Remote",
     description:
-      "I'm now a front-end developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Bootstrap. I'm open to full-time opportunities.",
+      "I'm now a front-end developer working in Studio20 Malaysia Based. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
     date: "2024 - present",
   },
@@ -110,10 +112,10 @@ export const projectsData = [
   {
     title: "Pos Malaysia",
     description:
-      "A project that is dedicated to track and calculate earnings and records using dashboard for Pos malaysia.",
+      "A project that is dedicated to track and calculate earnings and records using dashboard system for Pos malaysia.",
     tags: ["Next.js", "MongoDB", "TailwindCSS", "NodeJs", "Ant Design"],
-    imageUrl: CodebilityImg,
-    projectUrl: "https://codebility-fe.vercel.app/",
+    imageUrl: PosMalaysia,
+    projectUrl: "https://dutapos.com.my/",
   },
   {
     title: "PortfolioV1",
@@ -142,6 +144,7 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
+  "Ant Design",
   "MongoDB",
   "Express",
   "Php",
