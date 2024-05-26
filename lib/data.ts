@@ -5,12 +5,11 @@ import { LuGraduationCap } from "react-icons/lu";
 import ApexpointImg from "@/public/Apexpoint.png";
 import FormappImg from "@/public/formappImg.png";
 import PortfolioV2Img from "@/public/Porfoliov2.png";
-import PortfolioV1Img from "@/public/Portfoliov1.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
 import NetgoImg from "@/public/Netgo.png";
 import PosMalaysia from "@/public/pos_malaysia.png";
 import CodebilityImg from "@/public/codebility.png";
-
+import GestureglovesImg from "@/public/GestureglovesImg.png";
 export const links = [
   {
     name: "Home",
@@ -129,7 +128,16 @@ export const projectsData = [
     imageUrl: PosMalaysia,
     projectUrl: "https://dutapos.com.my/",
   },
-
+  {
+    title: "Gesture Gloves",
+    description:
+      "A project that is dedicated to for our capstone that is connected to  a hardware",
+    paragraph:
+      "The Gesture Gloves project is our capstone endeavor aimed at developing advanced gesture-controlled gloves connected to a hardware interface. Leveraging cutting-edge technologies, this project focuses on creating an intuitive and responsive system that translates hand gestures into digital commands. This involved extensive work in hardware-software integration, signal processing, and user interface design to ensure seamless and accurate gesture recognition. Through this project, we gained significant experience in working with sensors, microcontrollers, and real-time data processing, culminating in a user-friendly and practical application.",
+    tags: ["Next.js", "Shadcn", "MongoDB"],
+    imageUrl: GestureglovesImg,
+    projectUrl: "https://www.gesturegloves.online/",
+  },
   {
     title: "PortfolioV2",
     description:
