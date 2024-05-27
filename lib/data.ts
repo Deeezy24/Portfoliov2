@@ -52,7 +52,7 @@ export const experiencesData = [
     description:
       "I worked as a front-end developer for Codebility for 3 months up until now. An organization to upskilled everyone knowledge regarding programming.",
     icon: React.createElement(CgWorkAlt),
-    date: "2023-Present",
+    date: "2023-2024",
   },
 
   {
@@ -61,7 +61,7 @@ export const experiencesData = [
     description:
       "I'm now a front-end developer working in Studio20 Malaysia Based. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
-    date: "2024 - present",
+    date: "2024",
   },
 ] as const;
 
