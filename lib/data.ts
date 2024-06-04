@@ -6,10 +6,26 @@ import ApexpointImg from "@/public/Apexpoint.png";
 import FormappImg from "@/public/formappImg.png";
 import PortfolioV2Img from "@/public/Porfoliov2.png";
 import JavaCalcuImg from "@/public/Javacalcu.png";
-import NetgoImg from "@/public/Netgo.png";
+import TrelloImg from "@/public/TrelloImg.png";
 import PosMalaysia from "@/public/pos_malaysia.png";
 import CodebilityImg from "@/public/codebility.png";
 import GestureglovesImg from "@/public/GestureglovesImg.png";
+import { IoLogoHtml5 } from "react-icons/io";
+import { FaCss3 } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { FaSass } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+import { IoLogoReact } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa6";
+import { SiExpress } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiMysql } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
+import { SiReactquery } from "react-icons/si";
 export const links = [
   {
     name: "Home",
@@ -41,27 +57,35 @@ export const experiencesData = [
   {
     title: "De La Salle University Dasmarinas",
     location: "Dasmarinas, Cavite",
-    description:
-      "Currently studying, a 4th year student pursuing Computer Engineering major in Software Development.",
+    description: [
+      "Finished Bachelor of Science in Computer Engineering major in Software Development.",
+    ],
+
     icon: React.createElement(LuGraduationCap),
-    date: "2020-Present",
+    date: "Sep 2020-May 2024",
   },
   {
-    title: "Front-End Developer Intern",
+    title: " Codebility Front-End Developer Intern",
     location: "Remote",
-    description:
-      "I worked as a front-end developer for Codebility for 3 months up until now. An organization to upskilled everyone knowledge regarding programming.",
+    description: [
+      "- Collaborated with a cross-functional team, including back-end developers and UX/UI designers.",
+      "- Developed a responsive web application using Nextjs.",
+      "- Handled static and dynamic websites and create reusable components",
+    ],
     icon: React.createElement(CgWorkAlt),
-    date: "2023-2024",
+    date: "Aug 2023-Jan 2024",
   },
 
   {
     title: "Studio20 Front-End Developer",
     location: "Remote",
-    description:
-      "I'm now a front-end developer working in Studio20 Malaysia Based. I'm open to full-time opportunities.",
+    description: [
+      "- Worked closely with team members in a front-end development role.",
+      "- Developed a responsive web application using Nextjs and WordPress.",
+      "- My role includes maintaining code, fixing front-end bugs, creating new pages and UI utilizing CSS frameworks.   ",
+    ],
     icon: React.createElement(FaReact),
-    date: "2024",
+    date: "Feb 2024 - May 2024",
   },
 ] as const;
 
@@ -76,16 +100,7 @@ export const projectsData = [
     imageUrl: JavaCalcuImg,
     projectUrl: "https://calculatorjsvanilla.netlify.app",
   },
-  {
-    title: "Netgo Netflix Clone",
-    description:
-      "A project that clones Netlflix. It is a school project that has full-stack support.",
-    paragraph:
-      "The Netgo Netflix Clone project was a comprehensive full-stack development exercise aimed at creating a functional replica of the popular streaming service, Netflix. As a school project, it involved both front-end and back-end development, using Tailwind for styling, PHP for server-side scripting, and JavaScript for dynamic content management. This project provided valuable experience in handling user authentication, integrating API data, and implementing video streaming capabilities. It also involved setting up a database to manage user data and preferences, showcasing my ability to create scalable and user-friendly web applications.",
-    tags: ["Tailwind", "Php", "JavaScript"],
-    imageUrl: NetgoImg,
-    projectUrl: "https://github.com/IvorG24/Movie-api",
-  },
+
   {
     title: "Apexpoint",
     description:
@@ -148,22 +163,98 @@ export const projectsData = [
     imageUrl: PortfolioV2Img,
     projectUrl: "/",
   },
+
+  {
+    title: "Trello Clone",
+    description: "A project track a work progress designed like trello",
+    paragraph:
+      "Trello clone empowers you to streamline your workflow and collaborate seamlessly with a visually intuitive project management system. Inspired by Trello, TrelloX offers drag-and-drop functionality for organizing tasks across customizable boards and lists. Create, assign, and track progress on tasks with ease, ensuring everyone stays on the same page. Whether you're managing personal projects or collaborating with a team, TrelloX provides a powerful platform to boost your productivity and achieve your goals efficiently.",
+    tags: ["React", "Next.js", "Tailwind", "Shadcn", "Express.js"],
+    imageUrl: TrelloImg,
+    projectUrl: "https://github.com/IvorG24",
+  },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Ant Design",
-  "MongoDB",
-  "Express",
-  "Php",
-  "Framer Motion",
-  "SQL",
+  {
+    title: "HTML",
+    titleLogo: React.createElement(IoLogoHtml5),
+    logoColor: "orange",
+  },
+  {
+    title: "CSS",
+    titleLogo: React.createElement(FaCss3),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "TailwindCSS",
+    titleLogo: React.createElement(SiTailwindcss),
+    logoColor: "skyblue",
+  },
+  {
+    title: "Sass",
+    titleLogo: React.createElement(FaSass),
+    logoColor: "pink",
+  },
+  {
+    title: "JavaScript",
+    titleLogo: React.createElement(IoLogoJavascript),
+    logoColor: "yellow",
+  },
+  {
+    title: "TypeScript",
+    titleLogo: React.createElement(SiTypescript),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "React.Js",
+    titleLogo: React.createElement(IoLogoReact),
+    logoColor: "skyblue",
+  },
+  {
+    title: "Next.Js",
+    titleLogo: React.createElement(TbBrandNextjs),
+    logoColor: "black",
+  },
+  {
+    title: "Git",
+    titleLogo: React.createElement(FaGithub),
+    logoColor: "orange",
+  },
+  {
+    title: "Express.Js",
+    titleLogo: React.createElement(SiExpress),
+    logoColor: "white",
+  },
+
+  {
+    title: "Node.Js",
+    titleLogo: React.createElement(FaNodeJs),
+    logoColor: "green",
+  },
+  {
+    title: "MongoDB",
+    titleLogo: React.createElement(DiMongodb),
+    logoColor: "lightgreen",
+  },
+  {
+    title: "PostgreSql",
+    titleLogo: React.createElement(BiLogoPostgresql),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "Mysql",
+    titleLogo: React.createElement(SiMysql),
+    logoColor: "lightorange",
+  },
+  {
+    title: "Redux",
+    titleLogo: React.createElement(SiRedux),
+    logoColor: "violet",
+  },
+  {
+    title: "React Query",
+    titleLogo: React.createElement(SiReactquery),
+    logoColor: "#ff474c",
+  },
 ] as const;
