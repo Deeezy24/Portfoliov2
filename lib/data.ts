@@ -131,7 +131,7 @@ export const projectsData = [
       "The Codebility Page project was a collaborative effort aimed at supporting our coding community. Alongside my fellow developers, I worked on creating a platform using Next.js, ExpressJS, and TailwindCSS to foster learning and collaboration among coders. This project involved developing features such as user profiles, discussion forums, and resource sharing. By focusing on a community-driven approach, we aimed to create an inclusive and supportive environment for both novice and experienced programmers. The project highlighted the significance of teamwork and effective communication in achieving a common goal, as well as the technical skills required to build a full-fledged community platform.",
     tags: ["Next.js", "ExpressJS", "TailwindCSS"],
     imageUrl: CodebilityImg,
-    projectUrl: "https://codebility-fe.vercel.app/",
+    projectUrl: "https://www.codebility.tech/",
   },
   {
     title: "Pos Malaysia",
