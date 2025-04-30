@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaCloudflare, FaDocker, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import ApexpointImg from "@/public/Apexpoint.png";
 import FormappImg from "@/public/formappImg.png";
@@ -9,10 +9,12 @@ import JavaCalcuImg from "@/public/Javacalcu.png";
 import TrelloImg from "@/public/TrelloImg.png";
 import PosMalaysia from "@/public/pos_malaysia.png";
 import CodebilityImg from "@/public/codebility.png";
+import FormslyImg from "@/public/FormslyImg.png";
+import NoirImg from "@/public/NoirImg.png";
 import GestureglovesImg from "@/public/GestureglovesImg.png";
 import { IoLogoHtml5 } from "react-icons/io";
 import { FaCss3 } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiFirebase, SiRedis, SiSupabase, SiTailwindcss, SiVercel } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -75,7 +77,6 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "Aug 2023-Jan 2024",
   },
-
   {
     title: "Studio20 Front-End Developer",
     location: "Remote",
@@ -87,10 +88,35 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "Feb 2024 - May 2024",
   },
+  {
+    title: "Sta. Clara International Corp. Full Stack Developer",
+    location: "Remote",
+    description: [
+      "- Worked closely with team members in a full stack development role.",
+      "- Developed a responsive web application using Nextjs and Nodejs.",
+      "- My key responsibilities include creating new features, handling database interaction, creating API endpoints, and maintaining the application's overall functionality.",
+      "- I also handled the deployment of the application using Vercel.",
+    ],
+    icon: React.createElement(FaReact),
+    date: "Jul 2024 - Dec 2024",
+  },
+  {
+    title: "Freelance Full Stack Developer",
+    location: "Remote",
+    description: [
+      "- Worked as a solo developer in a full stack development role.",
+      "- Developed fully functional web applications using Nextjs and Nodejs from scratch based on client's requirements.",
+      "- Plan the website's architecture, CI/CD pipeline, API Routes, Custom Server Handling, Database, Handling network and application layer protection, and design the UI/UX.",
+
+    ],
+    icon: React.createElement(FaReact),
+    date: "Dec 2024 - Present",
+  },
 ] as const;
 
 export const projectsData = [
   {
+    type: "personal",
     title: "Javascript Calculator",
     description:
       "A project to calculate and function like an actual calculator using JavaScript",
@@ -100,8 +126,8 @@ export const projectsData = [
     imageUrl: JavaCalcuImg,
     projectUrl: "https://calculatorjsvanilla.netlify.app",
   },
-
   {
+    type: "project",
     title: "Apexpoint",
     description:
       "I worked as a front-end developer on this internship program for 3 months. A brand that exist in the E-commerce website (Shoppe) and (Lazada).",
@@ -113,6 +139,7 @@ export const projectsData = [
       "https://apexpointv2.vercel.app/?fbclid=IwAR1YMfLzhpUTJEygLz9CuZlkFhtD0mkqQXPM8H4wHmsCwXdsTbavF-FCs5U",
   },
   {
+    type: "project",
     title: "FormApp",
     description:
       "A project related to Football. I was the front-end developer. It has features like queuing, booking and crud.",
@@ -124,6 +151,7 @@ export const projectsData = [
       "https://formapp-fe.vercel.app/?fbclid=IwAR3hRGK-PgwlURkPSvXgaWmZ0LxWh49WYz0Oyo6Bzn3p_T-1udmpaWP8fZM",
   },
   {
+    type: "project",
     title: "Codebility Page",
     description:
       "A project that is dedicated to supporting codebility which is our community together with my codevs.",
@@ -134,6 +162,7 @@ export const projectsData = [
     projectUrl: "https://www.codebility.tech/",
   },
   {
+    type: "project",
     title: "Pos Malaysia",
     description:
       "A project that is dedicated to track and calculate earnings and records using dashboard system for Pos malaysia.",
@@ -144,6 +173,7 @@ export const projectsData = [
     projectUrl: "https://dutapos.com.my/",
   },
   {
+    type: "personal",
     title: "Gesture Gloves",
     description:
       "A project that is dedicated to for our capstone that is connected to  a hardware",
@@ -154,6 +184,7 @@ export const projectsData = [
     projectUrl: "https://www.gesturegloves.online/",
   },
   {
+    type: "personal",
     title: "PortfolioV2",
     description:
       "A project to store my projects and a way to contact me about any concerns",
@@ -163,8 +194,8 @@ export const projectsData = [
     imageUrl: PortfolioV2Img,
     projectUrl: "/",
   },
-
   {
+    type: "personal",
     title: "Trello Clone",
     description: "A project track a work progress designed like trello",
     paragraph:
@@ -173,6 +204,36 @@ export const projectsData = [
     imageUrl: TrelloImg,
     projectUrl: "https://github.com/IvorG24",
   },
+  {
+    type: "project",
+    title: "Formsly",
+    description: "An internal project built for a company I worked for as a full stack developer. It handles HR forms, employee requests, support tickets, and inventory management.",
+    paragraph:
+      "Formsly is a robust internal system designed to streamline HR and operations workflows within the company. It enables employees to submit and track various requests such as leave forms, asset requests, and IT support tickets. The platform also includes an inventory management module, allowing teams to monitor and manage company assets effectively. Built with a modern tech stack and an intuitive UI, Formsly improves communication, accountability, and efficiency across departments.",
+    tags: ["React", "Next.js", "Supabase", "Mantine UI"],
+    imageUrl: FormslyImg,
+    projectUrl: "https://formsly.io",
+  },
+  {
+    type: "project",
+    title: "Betting App",
+    description: "A freelance project built for a client, providing a complete betting platform with real-time match data, user wallet management, and admin control features.",
+    paragraph:
+      "This Betting App allows users to place wagers on sports matches with a clean and modern interface. It includes user authentication, dynamic odds handling, wallet and transaction management, and an admin dashboard for managing games, users, and payouts. Built with React, Next.js, Supabase, and styled using Mantine UI, the app provides a seamless and secure betting experience across devices. The backend leverages Supabase for real-time updates and PostgreSQL for relational data handling.",
+    tags: ["React", "Next.js", "Supabase", "Shadcn","Docker", "Cloudflare"],
+    imageUrl: "",
+    projectUrl: "https://github.com/IvorG24",
+  },
+  {
+    type: "project",
+    title: "Noir Clothing",
+    description: "A freelance e-commerce project built for a clothing brand, featuring product browsing, cart functionality, and admin-level product management.",
+    paragraph:
+      "Noir Clothing is a sleek and responsive e-commerce platform designed for a fashion brand. It offers features like dynamic product listings, category filtering, shopping cart, checkout flow, and user authentication. Admins can manage product inventory, track orders, and update product details through a secure dashboard. The platform is built with React and Next.js, uses Supabase for backend services, and is styled with Shadcn UI. Deployment through vercel, ensuring a fast and reliable user experience.",
+    tags: ["React", "Next.js", "Supabase", "Shadcn", "Vercel","HonoJS"],
+    imageUrl: NoirImg, // Add your image import or URL here
+    projectUrl: "https://noir-clothing.com",
+  }
 ] as const;
 
 export const skillsData = [
@@ -256,5 +317,50 @@ export const skillsData = [
     title: "React Query",
     titleLogo: React.createElement(SiReactquery),
     logoColor: "#ff474c",
+  },
+  {
+    title: "Hono",
+    titleLogo: React.createElement(FaNodeJs),
+    logoColor: "green",
+  },
+  {
+    title: "Supabase",
+    titleLogo: React.createElement(SiSupabase),
+    logoColor: "green",
+  },
+  {
+    title: "Docker",
+    titleLogo: React.createElement(FaDocker),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "Cloudflare",
+    titleLogo: React.createElement(FaCloudflare),
+    logoColor: "orange",
+  },
+  {
+    title: "Vercel",
+    titleLogo: React.createElement(SiVercel),
+    logoColor: "black",
+  },
+  {
+    title: "Mantine UI",
+    titleLogo: React.createElement(FaCss3),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "Shadcn",
+    titleLogo: React.createElement(FaCss3),
+    logoColor: "#2965f1",
+  },
+  {
+    title: "Firebase",
+    titleLogo: React.createElement(SiFirebase),
+    logoColor: "red",
+  },
+  {
+    title: "Redis",
+    titleLogo: React.createElement(SiRedis),
+    logoColor: "red",
   },
 ] as const;

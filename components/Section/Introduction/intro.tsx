@@ -63,10 +63,10 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Mark Ivor Glorioso.</span> I'm a{" "}
-        <span className="font-bold">Front-End Developer</span> with{" "}
-        <span className="font-bold">3 years</span> of experience. I enjoy
+        <span className="font-bold">Full Stack Developer</span> with{" "}
+        <span className="font-bold">4 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="underline">React (Next.js) / Node.js</span>.
       </motion.h1>
 
       <motion.div
@@ -108,7 +108,14 @@ export default function Intro() {
 
         <Link
           className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/IvorG24"
+          href="https://github.com/Deeezy24"
+          target="_blank"
+        >
+          <FaGithubSquare />
+        </Link>
+        <Link
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          href="https://github.com/redcloud442"
           target="_blank"
         >
           <FaGithubSquare />
