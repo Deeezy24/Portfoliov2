@@ -19,21 +19,12 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        Pursuing a degree in{" "}
-        <span className="font-medium">Computer Engineering</span>, I decided to Focus my
-        passion for programming. I joined in a coding bootcamp and learned{" "}
-        <span className="font-medium">Front-End web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        Logic and Solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with TypeScript and Php. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a Front-end developer.
-      </p>
+  After earning my degree in <span className="font-medium">Computer Engineering</span>, I committed to pursuing my passion for technology and software development. Throughout my academic journey, I developed a strong foundation in logic, algorithms, and system design, which naturally led me to programming. To further enhance my skills, I enrolled in a coding bootcamp where I focused intensively on <span className="font-medium">Front-End Web Development</span>. There, I gained hands-on experience in building responsive, user-friendly interfaces and developed a deep appreciation for clean code and efficient design patterns.
+  <br /><br />
+  <span className="italic">What I love most about programming</span> is the logical reasoning and the challenge of solving complex problems. The satisfaction of overcoming a tough bug or optimizing a feature is what drives me to continuously improve. My core tech stack includes <span className="font-medium">React, Next.js and Node.js</span>, and I am also proficient in TypeScript. I’ve worked on various projects ranging from personal applications to collaborative team-based systems, applying best practices in version control, component architecture, and API integration.
+  <br /><br />
+  I am always exploring new technologies and frameworks to stay up to date with industry trends. I’m currently seeking a <span className="font-medium">full-time position</span> as a Full Stack Developer where I can contribute to meaningful projects, grow as an engineer, and make a lasting impact through clean, scalable code.
+</p>
 
       <p>
         <span className="italic">When I'm not coding</span>, I enjoy playing

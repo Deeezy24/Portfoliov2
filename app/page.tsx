@@ -6,7 +6,8 @@ import Projects from "@/components/Section/Projects/projects";
 import SectionDivider from "@/components/Module/section-divider";
 import Skills from "@/components/Section/Skills/skills";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
