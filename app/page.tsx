@@ -11,12 +11,14 @@ export default async function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
-      <SectionDivider />
+
+      {/* <About /> */}
+      {/* <SectionDivider />
       <About />
       <Projects />
       <Skills />
       <Experience />
-      <Contact />
+      <Contact /> */}
     </main>
   );
 }
