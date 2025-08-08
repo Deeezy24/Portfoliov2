@@ -10,8 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
-import { useInView } from "react-intersection-observer";
-import Image from "next/image";
+
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
