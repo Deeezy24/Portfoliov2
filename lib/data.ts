@@ -12,6 +12,11 @@ import CodebilityImg from "@/public/codebility.png";
 import FormslyImg from "@/public/FormslyImg.png";
 import NoirImg from "@/public/NoirImg.png";
 import GeinieImg from "@/public/Geinie.png";
+import HarmonyImg from "@/public/HarmonyImg.png";
+import CascadingGraceImg from "@/public/CascadingGraceImg.png";
+import RiversResidenceImg from "@/public/RiversResidenceImg.png";
+import ObediImg from "@/public/ObediImg.png";
+import ThreeRiversImg from "@/public/ThreeRiversImg.png";
 import GestureglovesImg from "@/public/GestureglovesImg.png";
 import { IoLogoHtml5 } from "react-icons/io";
 import { FaCss3 } from "react-icons/fa";
@@ -113,8 +118,20 @@ export const experiencesData = [
 
     ],
     icon: React.createElement(FaReact),
-    date: "Dec 2024 - Present",
+    date: "Dec 2024 - Aug 2025",
   },
+  {
+    title: "Innovare HP",
+    location: "Remote",
+    description: [
+      "- Leading the company’s technology vision, digital strategy, and system architecture.",
+      "- Oversee end-to-end development and delivery of client platforms, from planning and design to deployment and maintenance.",
+      "- Architect and implement scalable full-stack solutions using Next.js and Node.js based on business and client requirements.",
+      "- Design and manage system architecture including APIs, databases, CI/CD pipelines, and custom server infrastructure.",
+    ],
+    icon: React.createElement(FaReact),
+    date: "Aug 2024 – Present",
+  }
 ] ;
 
 export const projectsData = [
@@ -247,7 +264,64 @@ export const projectsData = [
     tags: ["React", "Next.js", "Supabase", "Shadcn", "Vercel","HonoJS"],
     imageUrl: NoirImg, // Add your image import or URL here
     projectUrl: "https://noir-clothing.com",
+  },
+  {
+    type: "project",
+    title: "Harmony Fort Worth",
+    description:
+      "A healthcare marketing website designed to showcase services, build trust, and drive patient inquiries for a senior and wellness-focused care provider.",
+    paragraph:
+      "Harmony Fort Worth is a modern healthcare marketing website built to clearly communicate services, values, and patient-focused care. The platform emphasizes clarity, accessibility, and conversion through well-structured service sections, inquiry forms, and responsive design. It features optimized content flow, clean UI components, and fast performance to support marketing campaigns and organic traffic. Built with React and Next.js, powered by Supabase for backend services, styled with Shadcn UI, and deployed on Vercel for reliability and scalability.",
+    tags: ["React", "Astro", "Shadcn", "Framer"],
+    imageUrl: HarmonyImg,
+    projectUrl: "https://harmonyfortworth.com",
+  },
+  {
+    type: "project",
+    title: "Cascading Grace",
+    description:
+      "A healthcare marketing platform created to highlight compassionate care services and strengthen brand presence for a wellness-focused organization.",
+    paragraph:
+      "Cascading Grace is a healthcare marketing website focused on storytelling, trust-building, and service clarity. The site presents care offerings through structured sections, clear calls-to-action, and a calm, professional visual identity. Performance and accessibility were prioritized to ensure a seamless experience across devices. The project was built using React and Next.js, integrates Supabase for backend functionality, uses Shadcn UI for consistent styling, and is deployed on Vercel for fast global delivery.",
+    tags: ["Tanstack Start", "Shadcn", "Framer"],
+    imageUrl: CascadingGraceImg,
+    projectUrl: "https://cascadinggrace.com",
+  },
+  {
+    type: "project",
+    title: "Rivers Residence",
+    description:
+      "A healthcare-focused marketing website designed to promote residential care services and generate qualified inquiries.",
+    paragraph:
+      "Rivers Residence is a healthcare marketing site built to present residential care services in a clear, professional, and approachable way. The platform focuses on service visibility, user-friendly navigation, and lead generation through optimized inquiry flows. It features responsive layouts, SEO-friendly structure, and clean UI components. Built with React and Next.js, supported by Supabase, styled with Shadcn UI, and deployed on Vercel to ensure speed and reliability.",
+    tags: ["React", "Astro"],
+    imageUrl: RiversResidenceImg,
+    projectUrl: "https://riversresidence.com",
+  },
+  {
+    type: "project",
+    title: "Obedi Home",
+    description:
+      "A healthcare marketing website focused on home-based care services, designed to improve visibility and patient engagement.",
+    paragraph:
+      "Obedi Home is a healthcare marketing platform built to support home care providers by clearly communicating services, values, and care processes. The site prioritizes accessibility, trust, and conversion through clean layouts, intuitive navigation, and responsive design. It is optimized for performance and marketing scalability. Developed with React and Next.js, powered by Supabase, styled using Shadcn UI, and deployed on Vercel for consistent uptime.",
+    tags: ["React", "Astro"],
+    imageUrl: ObediImg,
+    projectUrl: "https://obedihome.com",
+  },
+  
+  {
+    type: "project",
+    title: "Three Rivers Health",
+    description:
+      "A healthcare marketing website built to promote clinical services, enhance brand credibility, and support patient outreach.",
+    paragraph:
+      "Three Rivers Health is a professionally designed healthcare marketing website focused on service clarity, patient trust, and lead generation. The platform showcases healthcare offerings through structured content, clear CTAs, and responsive layouts. Performance, SEO, and maintainability were key considerations throughout development. The site is built with React and Next.js, uses Supabase for backend services, styled with Shadcn UI, and deployed on Vercel for speed and reliability.",
+    tags: ["React", "Astro",  "Shadcn"],
+    imageUrl: ThreeRiversImg,
+    projectUrl: "https://trbh.com",
   }
+  
 ] as const;
 
 export const skillsData = [
