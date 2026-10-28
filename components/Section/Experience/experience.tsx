@@ -1,69 +1,47 @@
-"use client";
-
 import React from "react";
-import SectionHeading from "../../Module/section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import Section from "@/components/Module/section";
 import { experiencesData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
-
   return (
-    <section
-      id="experience"
-      ref={ref}
-      className="mb-28 w-full scroll-mt-28 sm:mb-40"
-    >
-      <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-      {experiencesData.slice().reverse().map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              visible={true}
-              contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
-                fontSize: "1.5rem",
-              }}
-            >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-
-              {item.description.map((description, index) => (
-                <p
-                  key={index}
-                  className="!mt-1 !font-normal py-1 text-gray-700 dark:text-white/75 text-justify"
-                >
-                  {description}
-                </p>
-              ))}
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
-    </section>
+    <Section id="experience" title="experience" caption="where I've worked">
+      <ol className="relative ml-1 border-l border-gray-200">
+        {experiencesData
+          .slice()
+          .reverse()
+          .map((item, i) => (
+            <li key={item.title} className="relative pb-2 pl-6">
+              <span
+                aria-hidden="true"
+                className={`absolute -left-[5px] top-[1.15rem] w-[9px] h-[9px] rounded-full border-2 border-surface ${
+                  i === 0 ? "bg-accent" : "bg-gray-300"
+                }`}
+              />
+              <details className="group" open={i === 0}>
+                <summary className="flex flex-wrap gap-x-4 gap-y-1 justify-between items-baseline py-3 rounded-md cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span className="text-[15px] font-medium group-hover:text-accent">{item.title.trim()}</span>
+                  <span className="font-mono text-[11px] text-gray-500">
+                    {item.date}
+                    <span aria-hidden="true" className="inline-block ml-3 transition-transform group-open:rotate-45 text-accent">
+                      +
+                    </span>
+                  </span>
+                </summary>
+                <div className="pb-4">
+                  <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500">{item.location}</p>
+                  <ul className="mt-2 space-y-1.5 text-[13px] leading-relaxed text-gray-600">
+                    {item.description.map((line) => (
+                      <li key={line} className="flex gap-2">
+                        <span aria-hidden="true" className="text-accent">▹</span>
+                        {line.replace(/^-\s*/, "")}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </details>
+            </li>
+          ))}
+      </ol>
+    </Section>
   );
 }

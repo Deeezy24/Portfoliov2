@@ -1,8 +1,11 @@
-import About from '@/components/Section/About/about'
-import React from 'react'
+import type { Metadata } from "next";
+import About from "@/components/Section/About/about";
 
-export default function page() {
-  return (
-  <About />
-  )
+export const metadata: Metadata = {
+  title: "About",
+  description: "Computer Engineering graduate turned AI & software engineer building full-stack web apps.",
+};
+
+export default function Page() {
+  return <About />;
 }

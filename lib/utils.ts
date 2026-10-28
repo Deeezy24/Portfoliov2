@@ -9,6 +9,14 @@ export const validateString = (
   return true;
 };
 
+// "Gesture Gloves" <-> "/Gesture-Gloves". Titles must not contain "-" or "/".
+export const projectSlug = (title: string) => title.trim().replace(/\s+/g, "-");
+
+export const findProjectBySlug = <T extends { title: string }>(projects: readonly T[], slug: string) => {
+  const name = decodeURIComponent(slug).replace(/[-/]/g, " ").trim().toLowerCase();
+  return projects.find((p) => p.title.trim().toLowerCase() === name);
+};
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 

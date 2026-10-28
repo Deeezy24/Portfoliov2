@@ -1,75 +1,67 @@
-"use client";
-
-import { useRef } from "react";
 import { projectsData } from "@/lib/data";
+import { projectSlug } from "@/lib/utils";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import clsx from "clsx";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & { featured?: boolean };
 
-export default function Project({
-  title,
-  description,
-  tags,
-  imageUrl,
-}: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
+// For projects without a screenshot (imageUrl: "").
+export function NoImage({ title }: { title: string }) {
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="mb-3 group sm:mb-3 last:mb-0"
+    <div className="flex relative justify-center items-center w-full h-full">
+      <div aria-hidden="true" className="absolute inset-0 opacity-20 dots" />
+      <span className="relative font-mono text-3xl font-bold text-gray-400">
+        {title.split(/\s+/).map((w) => w[0]).join("")}
+        <span className="text-accent">_</span>
+      </span>
+    </div>
+  );
+}
+
+// The first card of each tab spans both columns with the image beside the text.
+export default function Project({ title, description, tags, imageUrl, featured }: ProjectProps) {
+  return (
+    <Link
+      href={`/${projectSlug(title)}`}
+      className={clsx(
+        "group grid gap-4 p-4 rounded-2xl border border-gray-200 transition-colors bg-surface hover:border-accent/60",
+        featured && "sm:col-span-2 sm:grid-cols-2 sm:items-center"
+      )}
     >
-      <section className="bg-gray-100 max-w-full border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 ">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[60%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-justify text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap gap-2 mt-4 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-          <Link className="py-4 text-blue-500" href={`/${encodeURIComponent(title.replace(/\s+/g, '-'))}`}>
-            Read More...
-          </Link>
-        </div>
-
-        <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
-        />
-      </section>
-    </motion.div>
+      <div className="overflow-hidden rounded-xl border border-gray-200 aspect-[16/10] bg-gray-100">
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={`Screenshot of ${title}`}
+            placeholder="blur"
+            sizes="(min-width: 640px) 380px, 100vw"
+            className="object-cover object-top w-full h-full transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <NoImage title={title} />
+        )}
+      </div>
+      <div className="flex flex-col h-full">
+        {featured && (
+          <span className="mb-2 font-mono text-[10px] uppercase tracking-wider text-accent">★ featured</span>
+        )}
+        <h3 className="font-mono text-base font-bold leading-tight">{title}</h3>
+        <p className="mt-2 text-[13px] leading-relaxed text-gray-600 line-clamp-3">{description}</p>
+        <ul className="flex flex-wrap gap-1.5 pt-4 mt-auto">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-gray-300 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-gray-500"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+        <span className="mt-4 font-mono text-[11px] uppercase tracking-wider text-gray-500 group-hover:text-accent">
+          read more →
+        </span>
+      </div>
+    </Link>
   );
 }

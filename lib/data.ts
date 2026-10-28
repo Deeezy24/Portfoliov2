@@ -63,6 +63,17 @@ export const links = [
   },
 ] as const;
 
+export const email = "markivor.glorioso@gmail.com";
+
+// Account whose contribution graph is shown in the GitHub section.
+export const githubUser = "redcloud442";
+
+export const socials = [
+  { href: "https://www.linkedin.com/in/ivor-glorioso/", label: "linkedin" },
+  { href: "https://github.com/Deeezy24", label: "github" },
+  { href: "https://github.com/redcloud442", label: "github/work" },
+] as const;
+
 export const experiencesData = [
   {
     title: "De La Salle University Dasmarinas",
@@ -121,7 +132,7 @@ export const experiencesData = [
     date: "Dec 2024 - Aug 2025",
   },
   {
-    title: "Innovare HP",
+    title: "Innovare HP AI Software Engineer",
     location: "Remote",
     description: [
       "- Leading the company’s technology vision, digital strategy, and system architecture.",
@@ -451,4 +462,16 @@ export const skillsData = [
     titleLogo: React.createElement(SiRedis),
     logoColor: "red",
   },
+] as const;
+
+// Display grouping for the stack section; titles must match skillsData.
+// Skills not listed here show up under "other".
+export const skillGroups = [
+  { name: "frontend", skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React.Js", "Next.Js"] },
+  { name: "ui & state", skills: ["TailwindCSS", "Sass", "Mantine UI", "Shadcn", "Redux", "React Query"] },
+  {
+    name: "backend & data",
+    skills: ["Node.Js", "Express.Js", "Hono", "MongoDB", "PostgreSql", "Mysql", "Supabase", "Firebase", "Redis"],
+  },
+  { name: "devops & tools", skills: ["Git", "Docker", "Cloudflare", "Vercel"] },
 ] as const;

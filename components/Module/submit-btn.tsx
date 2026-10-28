@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPaperPlane } from "react-icons/fa";
+import { Send } from "lucide-react";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
 export default function SubmitBtn() {
@@ -8,15 +8,18 @@ export default function SubmitBtn() {
   return (
     <button
       type="submit"
-      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
       disabled={pending}
+      className="group inline-flex gap-2 justify-center items-center px-5 h-11 text-sm font-medium rounded-lg transition-opacity bg-ink text-surface hover:opacity-85 disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <>
+          <span className="w-4 h-4 rounded-full border-2 animate-spin border-surface/40 border-t-surface" aria-hidden="true" />
+          Sending…
+        </>
       ) : (
         <>
-          Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+          Send message
+          <Send className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
         </>
       )}
     </button>

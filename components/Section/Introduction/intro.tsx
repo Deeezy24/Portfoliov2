@@ -1,195 +1,107 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
-import { HiSparkles } from "react-icons/hi2";
-import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import Image from "next/image";
+import { ArrowUpRight, Download } from "lucide-react";
+import { projectsData, skillsData, socials } from "@/lib/data";
+import portrait from "@/public/ivor.jpg";
 
+const stats = [
+  { value: "4+", unit: "yrs", label: "building", href: "/experience" },
+  { value: `${projectsData.length}`, unit: "", label: "projects shipped", href: "/projects" },
+  { value: `${skillsData.length}`, unit: "", label: "tools in stack", href: "/skills" },
+];
 
+const card = "rounded-2xl border border-gray-200 bg-gray-50/60";
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="flex justify-center items-center px-4 min-h-screen"
-    >
-      <div className="mx-auto space-y-8 max-w-4xl text-center">
-        {/* Profile Image with Enhanced Animations */}
-        <div className="flex justify-center items-center mb-8">
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                duration: 0.8,
-              }}
-              className="relative"
-            >
- 
-              <div className="p-1 w-40 h-40 rounded-full border-2 shadow-2xl">
-               <Image src="/professional pic.jpg" alt="Profile" width={160} height={160} className="rounded-full" /> 
-              </div>
+    <section id="home" aria-label="Introduction" className="grid gap-3 pt-8 pb-16 md:grid-cols-12 md:pt-14">
+      {/* main card */}
+      <div className={`${card} relative overflow-hidden p-6 sm:p-8 md:col-span-8 reveal`}>
+        <div aria-hidden="true" className="absolute inset-0 opacity-[0.12] dots" />
+        <div className="relative">
+          <p className="font-mono text-[12px] text-gray-500">
+            <span className="text-accent">~/ivor</span> $ whoami
+            <span aria-hidden="true" className="inline-block ml-1 w-[7px] h-[13px] align-[-2px] bg-accent cursor-blink" />
+          </p>
+          <h1 className="mt-4 font-mono text-4xl font-bold tracking-tight leading-[1.05] sm:text-5xl">
+            Mark Ivor
+            <br />
+            Glorioso<span className="text-accent">_</span>
+          </h1>
+          <p className="mt-3 font-mono text-[12px] uppercase tracking-wider text-accent">AI &amp; Software Engineer</p>
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-gray-600">
+            I build full-stack web apps end to end, from the first sketch to
+            production. Lately my focus is <span className="text-ink">generative AI</span>: putting LLMs to work inside real products.
+          </p>
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-gray-600">
+            I like taking a half-formed idea and shipping it as something
+            people can use. Most days, that means building something new.
+          </p>
 
-            </motion.div>
-
-            <motion.span
-              className="absolute -right-2 -bottom-2 text-4xl"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 125,
-                delay: 0.1,
-                duration: 0.7,
-              }}
+          <div className="flex flex-wrap gap-3 mt-7">
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-4 h-11 text-sm font-medium rounded-lg transition-opacity bg-ink text-surface hover:opacity-85"
             >
-              
-            </motion.span>
+              Say hello
+            </Link>
+            <a
+              href="/CV_GLORIOSO.pdf"
+              download
+              className="inline-flex gap-2 items-center px-4 h-11 text-sm font-medium rounded-lg border border-gray-300 transition-colors bg-surface hover:border-ink"
+            >
+              <Download className="w-4 h-4" aria-hidden="true" />
+              Download CV
+            </a>
           </div>
         </div>
-
-        {/* Hero Content */}
-        <motion.div
-          className="space-y-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          <div className="space-y-4">
-            <motion.h1 
-              className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r sm:text-6xl lg:text-7xl from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Mark Ivor Glorioso
-            </motion.h1>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="inline-block"
-            >
-              <span className="px-6 py-2 text-lg font-semibold rounded-full border shadow-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700">
-                Full Stack Developer
-              </span>
-            </motion.div>
-          </div>
-
-          <motion.p
-            className="mx-auto max-w-3xl text-xl leading-relaxed sm:text-2xl text-slate-600 dark:text-slate-400"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <span className="font-semibold text-slate-900 dark:text-white">Hello!</span> I'm a passionate developer with{" "}
-            <span className="px-3 py-1 mx-1 text-base font-bold text-white bg-sky-700 rounded-full shadow-sm">
-              4 years
-            </span> of experience. 
-            I love building <span className="italic font-medium text-slate-800 dark:text-slate-200">sites & apps</span> with a focus on{" "}
-            <span className="font-semibold text-transparent bg-clip-text bg-sky-700">
-              React (Next.js) / Node.js
-            </span>
-          </motion.p>
-
-          {/* Tech Stack */}
-          <motion.div
-            className="flex flex-wrap gap-3 justify-center mx-auto max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            {["React", "Next.js", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS"].map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                className="px-4 py-2 text-sm font-medium bg-white rounded-full border shadow-sm transition-all duration-300 cursor-default dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-sky-700 hover:text-white hover:border-transparent"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          className="flex flex-col gap-4 justify-center items-center pt-4 sm:flex-row"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          <Link
-            href="#contact"
-            className="inline-flex gap-3 items-center px-8 py-4 text-lg font-semibold text-white bg-sky-700 rounded-full shadow-lg transition-all duration-300 transform group hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
-            onClick={() => {
-              setActiveSection("Contact");
-              setTimeOfLastClick(Date.now());
-            }}
-          >
-            Contact me here
-            <BsArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Link>
-
-          <a
-            href="/CV_GLORIOSO.pdf"
-            download
-            className="inline-flex gap-3 items-center px-8 py-4 text-lg font-semibold bg-white rounded-full border-2 shadow-lg transition-all duration-300 transform group text-slate-700 dark:text-slate-300 dark:bg-slate-800 border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:focus:ring-slate-600"
-          >
-            <HiDownload className="h-5 w-5 transition-transform group-hover:translate-y-0.5" />
-            Download CV
-          </a>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          className="flex gap-4 justify-center items-center pt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <div className="flex gap-3">
-            {[
-              { href: "https://www.linkedin.com/in/ivor-glorioso/", icon: BsLinkedin, label: "LinkedIn", color: "hover:bg-[#0077b5]" },
-              { href: "https://github.com/Deeezy24", icon: FaGithubSquare, label: "GitHub - Deeezy24", color: "hover:bg-slate-800" },
-              { href: "https://github.com/redcloud442", icon: FaGithubSquare, label: "GitHub - redcloud442", color: "hover:bg-slate-800" }
-            ].map((social, index) => (
-              <motion.div
-                key={social.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 + index * 0.1 }}
-              >
-                <Link
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className={`flex items-center justify-center h-12 w-12 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 ${social.color} hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-slate-300 dark:focus:ring-slate-600`}
-                >
-                  <social.icon className="w-6 h-6" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-
       </div>
+
+      {/* photo card */}
+      <div className={`${card} group overflow-hidden relative min-h-[20rem] md:col-span-4 md:row-span-2 reveal [animation-delay:80ms]`}>
+        <Image
+          src={portrait}
+          alt="Portrait of Mark Ivor Glorioso"
+          fill
+          priority
+          placeholder="blur"
+          sizes="(min-width: 768px) 330px, 100vw"
+          className="object-cover object-[50%_35%] grayscale contrast-[1.05] transition duration-500 group-hover:grayscale-0"
+        />
+        {/* Fades the busy café background into the card. */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t to-transparent pointer-events-none from-gray-50" />
+      </div>
+
+      {/* stats + socials row */}
+      <div className="grid grid-cols-3 gap-3 md:col-span-8">
+        {stats.map((stat) => (
+          <Link key={stat.label} href={stat.href} className={`${card} group p-4 transition-colors hover:border-accent/60`}>
+            <span className="flex gap-1 items-baseline font-mono text-2xl font-bold leading-none">
+              {stat.value}
+              {stat.unit && <span className="text-sm text-gray-500">{stat.unit}</span>}
+            </span>
+            <span className="block mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500 group-hover:text-accent">
+              {stat.label}
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <ul className={`${card} flex flex-wrap gap-x-5 gap-y-2 items-center px-5 py-4 font-mono text-[12px] text-gray-500 md:col-span-12`}>
+        <li className="text-gray-400">find me on</li>
+        {socials.map((s) => (
+          <li key={s.href}>
+            <a href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-accent">
+              {s.label}
+              <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+            </a>
+          </li>
+        ))}
+        <li className="ml-auto hidden sm:block">
+          press <kbd className="px-1.5 py-0.5 rounded border border-gray-300 bg-surface">⌘K</kbd> to explore
+        </li>
+      </ul>
     </section>
   );
 }

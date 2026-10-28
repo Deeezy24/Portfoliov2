@@ -1,60 +1,46 @@
-"use client";
-import Image from "next/image";
 import React from "react";
-import SectionHeading from "../../Module/section-heading";
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
+import Section from "@/components/Module/section";
+import { skillGroups, skillsData } from "@/lib/data";
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+type Skill = (typeof skillsData)[number];
+
+const grouped = new Set<string>(skillGroups.flatMap((g) => g.skills));
+const groups: { name: string; skills: Skill[] }[] = [
+  ...skillGroups.map((g) => ({
+    name: g.name,
+    skills: skillsData.filter((s) => (g.skills as readonly string[]).includes(s.title)),
+  })),
+  { name: "other", skills: skillsData.filter((s) => !grouped.has(s.title)) },
+].filter((g) => g.skills.length > 0);
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
-
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="p-10 mx-auto mb-28 max-w-2xl text-center scroll-mt-28 sm:mb-40"
-    >
-      <SectionHeading>Technology Stack</SectionHeading>
-      <ul className="flex flex-wrap gap-2 justify-center text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <>
-            <motion.li
-              className="flex gap-x-2 items-center px-5 py-3 bg-white rounded-xl borderBlack dark:bg-white/10 dark:text-white/80"
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{
-                once: true,
-              }}
-              custom={index}
-            >
-              <div
-                className="text-2xl"
-                key={index}
-                style={{ color: skill.logoColor }}
-              >
-                {skill.titleLogo}
-              </div>
-              {skill.title}
-            </motion.li>
-          </>
+    <Section id="skills" title="stack" caption="what I build with">
+      <div className="grid gap-3 sm:grid-cols-2">
+        {groups.map((group) => (
+          <div key={group.name} className="p-5 rounded-2xl border border-gray-200 bg-gray-50/60">
+            <div className="flex justify-between items-baseline mb-4">
+              <h3 className="font-mono text-[12px] uppercase tracking-wider">
+                <span className="text-accent">▹</span> {group.name}
+              </h3>
+              <span className="font-mono text-[11px] text-gray-500">{String(group.skills.length).padStart(2, "0")}</span>
+            </div>
+            <ul className="flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <li
+                  key={skill.title}
+                  className="inline-flex gap-2 items-center px-2.5 h-9 font-mono text-[12px] text-gray-600 rounded-lg border border-gray-200 transition-colors bg-surface hover:border-accent/60 hover:text-ink"
+                >
+                  <span aria-hidden="true" className="text-[14px] text-gray-500">
+                    {skill.titleLogo}
+                  </span>
+                  {skill.title}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
-    </section>
+      </div>
+    </Section>
   );
 }

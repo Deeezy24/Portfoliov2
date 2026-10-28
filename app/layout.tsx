@@ -1,18 +1,35 @@
+import type { Metadata } from "next";
 import Header from "@/components/Section/Header/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Footer from "@/components/Section/Footer/footer";
-import ThemeSwitch from "@/components/Module/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
-export const metadata = {
-  title: "Glorioso | Personal Portfolio",
-  description: "Glorioso is a front-end developer with 1 year of experience.",
+const description =
+  "Mark Ivor Glorioso, AI & software engineer. Builds full-stack web apps end to end, with a focus on generative AI.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-glorioso.vercel.app"),
+  title: {
+    default: "Mark Ivor Glorioso | AI & Software Engineer",
+    template: "%s | Mark Ivor Glorioso",
+  },
+  description,
+  alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    siteName: "Mark Ivor Glorioso",
+    description,
+    images: ["/ivor.jpg"],
+  },
 };
+
+// Runs before paint so a saved/system dark theme doesn't flash light.
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -20,27 +37,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 overflow-x-hidden`}
-      > 
-        <div className="wrapper">
-      {[...Array(15)].map((_, index) => (
-        <div key={index}><span className="dot"></span></div>
-      ))}
-        </div>
-          <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#56a0d5]"></div>
-          <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#6960cf]"></div>
-
+    <html
+      lang="en"
+      className={`${inter.variable} ${mono.variable} !scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="font-sans antialiased bg-surface text-ink">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-ink focus:px-3 focus:py-2 focus:text-sm focus:text-surface"
+        >
+          Skip to content
+        </a>
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
+          <Header />
+          <main id="content" className="px-6 mx-auto max-w-5xl">
             {children}
-       
-
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
+          </main>
+          <Footer />
+          <Toaster position="bottom-right" />
         </ThemeContextProvider>
       </body>
     </html>
